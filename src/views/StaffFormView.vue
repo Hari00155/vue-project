@@ -1,16 +1,24 @@
 <template>
   <Container>
-    <h1>Student Form</h1>
+    <h1>Staffs Form</h1>
 
     <form class="row g-3 needs-validation">
       <div class="col-md-6">
         <label for="inputFirstName" class="form-label">First Name</label>
-        <input type="text" class="form-control" id="inputFirstName" required />
-        <div class="invalid-feedback">Please choose a username.</div>
+        <input
+          type="text"
+          class="form-control"
+          id="inputFirstName"
+          required
+          v-model="formData.firstName"
+        />
+        {{ formData.firstName }}
       </div>
       <div class="col-md-6">
         <label for="inputLastName" class="form-label">Last Name</label>
-        <input type="LastName" class="form-control" id="inputLastName" />
+        <input type="LastName" class="form-control" id="inputLastName" required
+          v-model="formData.lastName" />
+          {{ formData.lastName }}
       </div>
       <div class="row mb-3">
         <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
@@ -80,6 +88,14 @@
 import Container from '@/components/Container.vue'
 
 export default {
+  data() {
+    return {
+      formData: {
+        firstName: null,
+        lastName: null,
+      },
+    }
+  },
   components: {
     Container,
   },

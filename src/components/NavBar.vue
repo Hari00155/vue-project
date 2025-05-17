@@ -22,6 +22,9 @@
             <router-link class="nav-link" to="/about">About</router-link>
           </li>
           <li class="nav-item">
+            <router-link class="nav-link" to="/staff-form">Staff Form</router-link>
+          </li>
+          <li class="nav-item">
             <router-link class="nav-link" to="/student-form">Student Form</router-link>
           </li>
           <li class="nav-item">
