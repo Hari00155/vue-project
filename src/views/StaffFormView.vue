@@ -23,18 +23,14 @@
       <div class="row mb-3">
         <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-25">
-          <input type="email" class="form-control" id="colFormLabel" placeholder="XYZ@Email.com" />
+          <input type="email" class="form-control" id="colFormLabel" placeholder="XYZ@Email.com" required v-model="formData.email"/>
+          {{ formData.email }}
         </div>
       </div>
-      <div class="col-md-6">
-        <label for="DOB" class="form-label">Dob</label>
-        <input type="text" class="form-control" id="inputDOB" />
-      </div>
-
       <div>
-        <label for="birthday">Birthday:</label>
-        <input type="date" id="birthday" name="birthday" />
-        <input type="submit" />
+        <label for="DOB">DOB:</label>
+        <input type="date" required v-model="formData.Dob"/>
+        {{ formData.Dob }}
       </div>
 
       <div class="col-md-4">
@@ -53,7 +49,8 @@
       </div>
       <div class="col-md-2">
         <label for="inputAGE" class="form-label">Age</label>
-        <input type="text" class="form-control" id="inputAGE" />
+        <input type="text" class="form-control" id="inputAGE" required v-model="formData.age"/>
+        {{ formData.age }}
       </div>
       <div class="form-floating">
         <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
@@ -68,7 +65,8 @@
       <div class="row mb-3">
         <label for="inputPhoneNO" class="col-sm-2 col-form-label">Phone No</label>
         <div class="col-sm-25">
-          <input type="email" class="form-control" id="inputPhoneNo" />
+          <input type="email" class="form-control" id="inputPhoneNo" required v-model="formData.phno"/>
+          {{ formData.phno }}
         </div>
       </div>
       <div class="col-12">
@@ -93,6 +91,10 @@ export default {
       formData: {
         firstName: null,
         lastName: null,
+        email: null,
+        Dob: null,
+        Age: null,
+        phno: null,
       },
     }
   },
