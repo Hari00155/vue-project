@@ -17,8 +17,14 @@
       <div class="row mb-3">
         <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-25">
-          <input type="email" class="form-control" id="colFormLabel" placeholder="XYZ@Email.com" required
-          v-model="formData.email"/>
+          <input
+            type="email"
+            class="form-control"
+            id="colFormLabel"
+            placeholder="XYZ@Email.com"
+            required
+            v-model="formData.email"
+          />
           {{ formData.email }}
         </div>
       </div>
@@ -35,16 +41,28 @@
       </div>
       <div class="col-md-2">
         <label for="inputnoofstaff" class="form-label">No of Staffs</label>
-        <input type="text" class="form-control" id="inputnoofstaffs" required v-model="formData.noofstaffs"/>
+        <input
+          type="text"
+          class="form-control"
+          id="inputnoofstaffs"
+          required
+          v-model="formData.noofstaffs"
+        />
         {{ formData.noofstaffs }}
       </div>
 
       <div class="col-md-2">
         <label for="inputnooflabs" class="form-label">No of Labs</label>
-        <input type="text" class="form-control" id="inputnooflabs" required v-model="formData.Nooflabs"/>
+        <input
+          type="text"
+          class="form-control"
+          id="inputnooflabs"
+          required
+          v-model="formData.Nooflabs"
+        />
         {{ formData.Nooflabs }}
       </div>
-      
+
       <div class="col-12">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" id="gridCheck" />
