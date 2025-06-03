@@ -2,6 +2,8 @@
   <Container>
     <h1>Department Form</h1>
 
+
+  Rest API Data:  {{ apiData }}
     <form class="row mb-3 needs-validation">
       <div class="col-sm-25">
         <label for="inputDepartmentName" class="form-label">Department Name</label>
@@ -78,10 +80,12 @@
 
 <script>
 import Container from '@/components/Container.vue'
+import axios from 'axios';
 
 export default {
   data() {
     return {
+      apiData: {},
       formData: {
         DepartmentName: null,
         lastName: null,
@@ -91,6 +95,16 @@ export default {
         Nooflabs: null,
       },
     }
+  },
+  mounted() {
+    axios
+      .get('http://localhost:3001/students') // Replace with your API endpoint
+      .then(response => {
+        this.apiData = response.data;
+      })
+      .catch(error => {
+        this.error = error;
+      });
   },
 
   components: {
