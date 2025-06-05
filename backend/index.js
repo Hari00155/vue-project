@@ -3,8 +3,20 @@ const cors = require('cors')
 const app = express()
 const PORT = process.env.PORT || 3001
 
+const studentRoutes = require('./routes/studentRoutes');
+const db = require('./config/database');
+
+// Connect to the database
+db.authenticate()
+ .then(() => console.log('Database connected'))
+ .catch((err) => console.error('Error connecting to database:', err));
+
 // Allow all origins
 app.use(cors());
+// Middleware to parse JSON requests
+app.use(express.json());
+
+app.use(studentRoutes)
 
 // Rest API creation
 app.get('/', (req, res) => {
@@ -24,28 +36,6 @@ app.get('/students', (req, res) => {
 
   res.send(students)
 })
-
-// app.get('/students')
-
-// app.get('/students/id')
-
-// // To Create
-// app.post('/students')
-
-// // To update
-// app.put('/students')
-
-// // To update
-// app.delete('/students/id')
-
-
-
-// app.use((req, res, next) => {
-//   res.header('Access-Control-Allow-Origin', '*'); // Replace * with your origin if needed
-//   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-//   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-//   next();
-// });
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`)
