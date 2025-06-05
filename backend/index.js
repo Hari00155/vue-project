@@ -23,20 +23,6 @@ app.get('/', (req, res) => {
   res.send('Welcome to Express JS!!!')
 })
 
-// Rest API creation
-app.get('/students', (req, res) => {
-
-  // get all students from database
-
-  let students = {
-    name: 'Hari',
-    age: '20',
-    city: 'Chennai'
-  }
-
-  res.send(students)
-})
-
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`)
 })

@@ -1,21 +1,49 @@
 const Sequelize = require('sequelize');
 const db = require('../config/database');
-const Todo = db.define('todo', {
-  task: {
+
+const Student = db.define('students', {
+  firstName: {
     type: Sequelize.STRING,
+    field: 'first_name'
+  },
+   lastName: {
+    type: Sequelize.STRING,
+    field: 'last_name'
+  },
+   email: {
+    type: Sequelize.STRING,
+    
+  },
+   age: {
+    type: Sequelize.INTEGER,
+    
+  },
+   bloodGroup: {
+    type: Sequelize.STRING,
+    field: 'blood_group'
+  },
+   dob: {
+    type: Sequelize.INTEGER,
     allowNull: false,
   },
-  createdDate: {
+   mobileNo: {
+    type: Sequelize.STRING,
+    field: 'mobile_no'
+  },
+   currentYear: {
+    type: Sequelize.STRING,
+    field: 'current_year'
+  },
+   createdAt: {
     type: Sequelize.DATE,
-    defaultValue: Sequelize.NOW,
+    field: 'created_at'
   },
-  percentCompleted: {
+   departmentId: {
     type: Sequelize.INTEGER,
-    defaultValue: 0,
+    field: 'department_id'
   },
-  isCompleted: {
-    type: Sequelize.BOOLEAN,
-    defaultValue: false,
-  },
-});
-module.exports = Todo;
+},{
+  timestamps:false
+}
+);
+module.exports = Student;
