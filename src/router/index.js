@@ -4,6 +4,7 @@ import AboutView from '@/views/AboutView.vue'
 import StaffFormView from '@/views/StaffFormView.vue'
 import StudentFormView from '@/views/StudentFormView.vue'
 import DepartFormView from '@/views/DepartmentFormView.vue'
+import ListView from '@/views/ListView.vue'
 
 // route config
 const routes = [
@@ -11,7 +12,8 @@ const routes = [
   { path: '/about', name: 'about', component: AboutView },
   { path: '/staff-form', name: 'staff-form', component: StaffFormView },
   { path: '/student-form', name: 'student-form', component: StudentFormView },
-  { path: '/Department-form', name: 'Department-form', component: DepartFormView }
+  { path: '/Department-form', name: 'Department-form', component: DepartFormView },
+  { path: '/List-form', name: 'List-form', component: ListView }
 ]
 
 const router = createRouter({
