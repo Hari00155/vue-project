@@ -31,6 +31,9 @@
             <router-link class="nav-link" to="/Department-form">Department Form</router-link>
           </li>
           <li class="nav-item">
+            <router-link class="nav-link" to="/List-form">List View</router-link>
+          </li>
+          <li class="nav-item">
             <router-link class="nav-link" to="/blog">Blog</router-link>
           </li>
           <li class="nav-item">

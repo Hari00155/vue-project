@@ -5,6 +5,7 @@ const studentController = require('../controllers/studentController')
 router.get('/students', studentController.getAllStudents)
 // // Route to create a new todo
 // router.post('/', todoController.createTodo);
+router.post('/students', studentController.createStudent)
 // // Route to get a todo by ID
 // router.get('/:id', todoController.getTodoById);
 // // Route to update a todo by ID
