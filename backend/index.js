@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3001
 
 const studentRoutes = require('./routes/studentRoutes');
 const departmentRoutes = require('./routes/departmentRoutes');
+const staffRoutes = require('./routes/staffRoutes');
 const db = require('./config/database');
 
 // Connect to the database
@@ -19,6 +20,7 @@ app.use(express.json());
 
 app.use(studentRoutes)
 app.use(departmentRoutes);
+app.use(staffRoutes);
 // app.use(departmentRoutes)
 
 // Rest API creation
