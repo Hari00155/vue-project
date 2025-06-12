@@ -22,3 +22,14 @@ exports.createStudent = async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' })
   }
 }
+
+exports.getStudentById = async (req, res) => {
+  try {
+    const id = req.params['id']
+    const student = await Student.findByPk(id);
+    res.json(student)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ error: 'Internal Server Error' })
+  }
+}

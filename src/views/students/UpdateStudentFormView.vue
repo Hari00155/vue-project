@@ -1,8 +1,20 @@
 <template>
   <Container>
-    <h1>Student Form</h1>
+    <h1>Update Student Form</h1>
 
-    <RouterLink to="/students/update">To update a student</RouterLink>
+<div class="row g-3 align-items-center">
+  <div class="col-auto">
+    <label for="inputPassword6" class="col-form-label">Enter student id to search:</label>
+  </div>
+  <div class="col-auto">
+    <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" v-model="studentId">
+  </div>
+  <div class="col-auto">
+    <button type="button" class="btn btn-info" @click="searchStudentById">Search</button>
+  </div>
+</div>
+
+<hr>
 
     <form class="row g-3 needs-validation" @submit.prevent="handleSubmit">
       <div class="col-md-6">
@@ -107,6 +119,7 @@ export default {
         departmentId: 1,
       },
       message: null,
+      studentId: null
     }
   },
   methods: {
@@ -137,6 +150,10 @@ export default {
         departmentId: 1,
       }
     },
+    async searchStudentById() {
+
+
+    }
   },
 
   components: {
