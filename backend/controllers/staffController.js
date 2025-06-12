@@ -13,7 +13,7 @@ exports.getAllStaffs = async (req, res) => {
 
 exports.createStaff = async (req, res) => {
   try {
-    const department = await Staff.create(req.body)
+    const staff = await Staff.create(req.body)
     res.json(staff)
   } catch (error) {
     console.log(error)

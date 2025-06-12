@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const staffController = require('../controllers/staffController')
 // Route to get all todos
-router.get('/staffs', staffController.getAllStaff)
+router.get('/staffs', staffController.getAllStaffs)
 // // Route to create a new todo
 // router.post('/', todoController.createTodo);
 router.post('/staffs', staffController.createStaff)

@@ -18,7 +18,7 @@ app.use(cors());
 // Middleware to parse JSON requests
 app.use(express.json());
 
-app.use(studentRoutes)
+app.use(studentRoutes);
 app.use(departmentRoutes);
 app.use(staffRoutes);
 // app.use(departmentRoutes)
