@@ -6,8 +6,9 @@ const departmentController = require('../controllers/departmentController')
 
 // Route to create a new todo
 router.post('/departments', departmentController.createDepartment);
+
 // // Route to get a todo by ID
-// router.get('/:id', todoController.getTodoById);
+router.get('departments/:id', departmentController.getDepartmentById);
 // // Route to update a todo by ID
 // router.put('/:id', todoController.updateTodo);
 // // Route to delete a todo by ID

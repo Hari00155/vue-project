@@ -20,3 +20,15 @@ exports.createDepartment = async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' })
   }
 }
+
+
+exports.getDepartmentById = async (req, res) => {
+  try {
+    const id = req.params['id']
+    const Department = await Department.findByPk(id);
+    res.json(Department)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ error: 'Internal Server Error' })
+  }
+}
