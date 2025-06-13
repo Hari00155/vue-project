@@ -33,3 +33,18 @@ exports.getStudentById = async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' })
   }
 }
+
+exports.updateStudentById = async (req, res) => {
+  try {
+    const id = req.params['id']
+
+    const dbUserResult = await Student.findByPk(id)
+    const dataToSave = { dbUserResult, ...req.body }
+
+    const student = await Student.upsert(dataToSave)
+    res.json(student)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ error: 'Internal Server Error' })
+  }
+}

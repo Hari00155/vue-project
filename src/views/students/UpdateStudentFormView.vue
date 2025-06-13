@@ -124,17 +124,15 @@ export default {
   },
   methods: {
     async handleSubmit() {
-      let url = 'http://localhost:3001/students'
-      axios.post(url, this.formData)
+      let url = `http://localhost:3001/${studentId}`
+      axios.put(url, this.formData)
         .then(function (response) {
-          console.log(response);
-          this.message = "Record created."
-          this.resetForm()
+          this.formData = response
+          this.message = 'Record updated successfully.'
         })
         .catch(function (error) {
           console.log(error);
         });
-
     },
     resetForm() {
       this.formData = {
@@ -152,7 +150,15 @@ export default {
     },
     async searchStudentById() {
 
-
+      let url = `http://localhost:3001/${studentId}`
+      axios.get(url)
+        .then(function (response) {
+          console.log(response);
+          this.formData = response
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     }
   },
 

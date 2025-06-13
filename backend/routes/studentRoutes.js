@@ -10,7 +10,7 @@ router.post('/students', studentController.createStudent)
 // Route to get a student by ID
 router.get('/students/:id', studentController.getStudentById);
 // // Route to update a todo by ID
-// router.put('/:id', todoController.updateTodo);
-// // Route to delete a todo by ID
+router.put('/students/:id', studentController.updateStudentById);
+// Route to delete a todo by ID
 // router.delete('/:id', todoController.deleteTodo);
 module.exports = router
