@@ -8,7 +8,7 @@ router.get('/staffs', staffController.getAllStaffs)
 router.post('/staffs', staffController.createStaff)
 
 // // Route to get a todo by ID
-router.get('staffs/:id', StaffController.getStaffById);
+router.get('/staffs/:id', staffController.getStaffById);
 // // Route to update a todo by ID
 // router.put('/:id', todoController.updateTodo);
 // // Route to delete a todo by ID
