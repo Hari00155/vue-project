@@ -65,10 +65,10 @@
       <div class="form-floating">
         <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
           v-model="formData.currentYear">
-          <option value="1">1st Year</option>
-          <option value="2">2nd Year</option>
-          <option value="3">3th Year</option>
-          <option value="4">4th Year</option>
+          <option value="1st Year">1st Year</option>
+          <option value="2nd Year">2nd Year</option>
+          <option value="3th Year">3th Year</option>
+          <option value="4th Year">4th Year</option>
         </select>
         <label for="floatingSelect">Current Year</label>
         {{ formData.currentYear }}
@@ -87,7 +87,7 @@
         </div>
       </div>
       <div class="col-12">
-        <button class="btn btn-primary" type="submit">Submit form</button>
+        <button class="btn btn-primary" type="submit" :disabled="!formData?.id">Update form</button>
       </div>
     </form>
 
@@ -119,14 +119,15 @@ export default {
         departmentId: 1,
       },
       message: null,
-      studentId: null
+      studentId: null,
+      
     }
   },
   methods: {
     async handleSubmit() {
-      let url = `http://localhost:3001/${studentId}`
+      let url = `http://localhost:3001/students/${this.studentId}`
       axios.put(url, this.formData)
-        .then(function (response) {
+        .then( response => {
           this.formData = response
           this.message = 'Record updated successfully.'
         })
@@ -150,12 +151,12 @@ export default {
     },
     async searchStudentById() {
 
-      let url = `http://localhost:3001/${studentId}`
+      let url = `http://localhost:3001/students/${this.studentId}`
       axios.get(url)
-        .then(function (response) {
-          console.log(response);
-          this.formData = response
-        })
+        .then(response => {
+          console.log(response)
+        this.formData= response.data;
+      })
         .catch(function (error) {
           console.log(error);
         });

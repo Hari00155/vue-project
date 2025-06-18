@@ -53,10 +53,10 @@
       <div class="form-floating">
         <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
           v-model="formData.currentYear">
-          <option value="1">1st Year</option>
-          <option value="2">2nd Year</option>
-          <option value="3">3th Year</option>
-          <option value="4">4th Year</option>
+          <option value="1st Year">1st Year</option>
+          <option value="2nd Year">2nd Year</option>
+          <option value="3th Year">3th Year</option>
+          <option value="4th Year">4th Year</option>
         </select>
         <label for="floatingSelect">Current Year</label>
         {{ formData.currentYear }}
@@ -102,7 +102,7 @@ export default {
         age: null,
         mobileNo: null,
         currentYear: null,
-        createdAt: null,
+        createdAt: Date.now(),
         bloodGroup: null,
         departmentId: 1,
       },
@@ -113,7 +113,7 @@ export default {
     async handleSubmit() {
       let url = 'http://localhost:3001/students'
       axios.post(url, this.formData)
-        .then(function (response) {
+        .then( response => {
           console.log(response);
           this.message = "Record created."
           this.resetForm()

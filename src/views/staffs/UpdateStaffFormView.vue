@@ -1,11 +1,8 @@
 <template>
   <Container>
-    <h1>Staffs Form</h1>
+    <h1>Update Staff Form</h1>
 
-     <RouterLink to="/staffs/update">To update a staff</RouterLink>
-
-
-    <form class="row g-3 needs-validation">
+     <form class="row g-3 needs-validation">
       <div class="col-md-6">
         <label for="inputFirstName" class="form-label">First Name</label>
         <input
@@ -82,11 +79,18 @@
         <button class="btn btn-primary" type="submit">Submit form</button>
       </div>
     </form>
+
+    <!-- Success Alert-->
+    <div v-if="message" class="alert alert-success" role="alert">
+      {{ message }}
+    </div>
   </Container>
 </template>
 
 <script>
 import Container from '@/components/Container.vue'
+
+import axios from 'axios'
 
 export default {
   data() {
@@ -95,29 +99,30 @@ export default {
         firstName: null,
         lastName: null,
         email: null,
-        Dob: null,
-        bloodgroup: null,
-        Age: null,
-        yearofexperience: null,
-        phno: null,
+        dob: null,
+        bloodGroup: null,
+        age: null,
+        Yearofexperience: null,
+        mobileNo: null,
+        createdAt: null,
+        departmentId: 1,
       },
       message: null,
+      staffId: null,
+
     }
   },
-
-   methods: {
+  methods: {
     async handleSubmit() {
-      let url = 'http://localhost:3001/staffs'
-      axios.post(url, this.formData)
-        .then( response => {
-          console.log(response);
-          this.message = "Record created."
-          this.resetForm()
+      let url = `http://localhost:3001/staffs/${this.staffId}`
+      axios.put(url, this.formData)
+        .then(response => {
+          this.formData = response
+          this.message = 'Record updated successfully.'
         })
         .catch(function (error) {
           console.log(error);
         });
-
     },
     resetForm() {
       this.formData = {
@@ -125,13 +130,27 @@ export default {
         lastName: null,
         email: null,
         dob: null,
-        bloodGroup: null,
         age: null,
         mobileNo: null,
+        Yearofexperience: null,
         createdAt: null,
+        bloodGroup: null,
       }
     },
+    async searchStaffById() {
+
+      let url = `http://localhost:3000/staffs/${this.staffId}`
+      axios.get(url)
+        .then(response => {
+          console.log(response)
+          this.formData = response.data;
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
   },
+
   components: {
     Container,
   },

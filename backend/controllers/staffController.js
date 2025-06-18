@@ -33,3 +33,18 @@ exports.getStaffById = async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' })
   }
 }
+
+exports.updateStaffById = async (req, res) => {
+  try {
+    const id = req.params['id']
+
+    const dbUserResult = await Staff.findByPk(id)
+    const dataToSave = { dbUserResult, ...req.body }
+
+    const staff = await Staff.upsert(dataToSave)
+    res.json(staff)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ error: 'Internal Server Error' })
+  }
+}
