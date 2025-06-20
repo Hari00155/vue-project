@@ -10,7 +10,7 @@
     <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" v-model="studentId">
   </div>
   <div class="col-auto">
-    <button type="button" class="btn btn-info" @click="searchStudentById">Search</button>
+    <button type="button" class="btn btn-outline-primary" @click="searchStudentById">Search</button>
   </div>
 </div>
 

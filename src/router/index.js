@@ -7,6 +7,7 @@ import DepartFormView from '@/views/DepartmentFormView.vue'
 import ListView from '@/views/ListView.vue'
 import UpdateStudentFormView from '@/views/students/UpdateStudentFormView.vue'
 import UpdateStaffFormView from '@/views/staffs/UpdateStaffFormView.vue'
+import UpdateDepartmentFormView from '@/views/departments/UpdateDepartmentFormView.vue'
 
 // route config
 const routes = [
@@ -17,7 +18,9 @@ const routes = [
   { path: '/Department-form', name: 'Department-form', component: DepartFormView },
   { path: '/List-form', name: 'List-form', component: ListView },
   { path: '/students/update', name: 'Update Student Form', component: UpdateStudentFormView },
-  { path: '/staff/update', name: 'Update Staff Form', component: UpdateStaffFormView }
+  { path: '/staffs/update', name: 'Update Staff Form', component: UpdateStaffFormView },
+  { path: '/departments/update', name: 'Update Department Form', component: UpdateDepartmentFormView }
+  
 ]
 
 const router = createRouter({

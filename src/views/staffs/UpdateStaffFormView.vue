@@ -2,34 +2,41 @@
   <Container>
     <h1>Update Staff Form</h1>
 
-     <form class="row g-3 needs-validation">
+    <div class="row g-3 align-items-center">
+      <div class="col-auto">
+        <label for="inputPassword6" >Enter staff id to search:</label>
+      </div>
+      <div class="col-auto">
+        <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline"
+          v-model="staffId">
+      </div>
+      <div class="col-auto">
+        <button type="button" class="btn btn-outline-success"> Search </button>
+      </div>
+    </div>
+
+    <form class="row g-3 needs-validation">
       <div class="col-md-6">
         <label for="inputFirstName" class="form-label">First Name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="inputFirstName"
-          required
-          v-model="formData.firstName"
-        />
+        <input type="text" class="form-control" id="inputFirstName" required v-model="formData.firstName" />
         {{ formData.firstName }}
       </div>
       <div class="col-md-6">
         <label for="inputLastName" class="form-label">Last Name</label>
-        <input type="LastName" class="form-control" id="inputLastName" required
-          v-model="formData.lastName" />
-          {{ formData.lastName }}
+        <input type="LastName" class="form-control" id="inputLastName" required v-model="formData.lastName" />
+        {{ formData.lastName }}
       </div>
       <div class="row mb-3">
         <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-25">
-          <input type="email" class="form-control" id="colFormLabel" placeholder="XYZ@Email.com" required v-model="formData.email"/>
+          <input type="email" class="form-control" id="colFormLabel" placeholder="XYZ@Email.com" required
+            v-model="formData.email" />
           {{ formData.email }}
         </div>
       </div>
       <div>
         <label for="DOB">DOB:</label>
-        <input type="date" required v-model="formData.Dob"/>
+        <input type="date" required v-model="formData.Dob" />
         {{ formData.Dob }}
       </div>
 
@@ -49,7 +56,7 @@
       </div>
       <div class="col-md-2">
         <label for="inputAGE" class="form-label">Age</label>
-        <input type="text" class="form-control" id="inputAGE" required v-model="formData.age"/>
+        <input type="text" class="form-control" id="inputAGE" required v-model="formData.age" />
         {{ formData.age }}
       </div>
       <div class="form-floating">
@@ -65,7 +72,7 @@
       <div class="row mb-3">
         <label for="inputPhoneNO" class="col-sm-2 col-form-label">Phone No</label>
         <div class="col-sm-25">
-          <input type="email" class="form-control" id="inputPhoneNo" required v-model="formData.phno"/>
+          <input type="email" class="form-control" id="inputPhoneNo" required v-model="formData.phno" />
           {{ formData.phno }}
         </div>
       </div>

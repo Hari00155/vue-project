@@ -1,8 +1,18 @@
 <template>
   <Container>
-    <h1>Department Form</h1>
+    <h1>Update Department Form</h1>
 
-    <RouterLink to="/departments/update">To update a department</RouterLink>
+    <div class="row g-3 align-items-center">
+  <div class="col-auto">
+    <label for="inputPassword6" class="col-form-label">Enter department id to search:</label>
+  </div>
+  <div class="col-auto">
+    <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" v-model="departmentId">
+  </div>
+  <div class="col-auto">
+    <button type="button" class="btn btn-outline-warning"> Search </button>
+  </div>
+</div>
 
     <form class="row mb-3 needs-validation">
       <div class="col-sm-25">
@@ -75,6 +85,11 @@
         <button class="btn btn-primary" type="submit">Submit form</button>
       </div>
     </form>
+
+    <!-- Success Alert-->
+    <div v-if="message" class="alert alert-success" role="alert">
+      {{ message }}
+    </div>
   </Container>
 </template>
 
@@ -94,17 +109,45 @@ export default {
         noofstaffs: null,
         Nooflabs: null,
       },
+      message: null,
+      departmentId: null,
     }
   },
-  mounted() {
-    axios
-      .get('http://localhost:3001/students') // Replace with your API endpoint
-      .then((response) => {
-        this.apiData = response.data
-      })
-      .catch((error) => {
-        this.error = error
-      })
+
+ methods: {
+    async handleSubmit() {
+      let url = `http://localhost:3001/departments/${this.deartmentId}`
+      axios.put(url, this.formData)
+        .then(response => {
+          this.formData = response
+          this.message = 'Record updated successfully.'
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    },
+    resetForm() {
+      this.formData = {
+        DepartmentName: null,
+        lastName: null,
+        email: null,
+        HODName: null,
+        noofstaffs: null,
+        Nooflabs: null,
+      }
+    },
+    async searchDepartmentById() {
+
+      let url = `http://localhost:3000/departments/${this.departmentId}`
+      axios.get(url)
+        .then(response => {
+          console.log(response)
+          this.formData = response.data;
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
   },
 
   components: {
