@@ -1,5 +1,6 @@
 <template>
   <Container>
+    <div class="p-3 mb-2 bg-info-subtle text-info-emphasis">
     <h1>Update Staff Form</h1>
 
     <div class="row g-3 align-items-center">
@@ -86,6 +87,7 @@
         <button class="btn btn-primary" type="submit">Submit form</button>
       </div>
     </form>
+    </div>
 
     <!-- Success Alert-->
     <div v-if="message" class="alert alert-success" role="alert">

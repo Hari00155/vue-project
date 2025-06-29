@@ -1,5 +1,6 @@
 <template>
   <Container>
+    <div class="p-3 mb-2 bg-primary-subtle text-primary-emphasis">
     <h1>Update Student Form</h1>
 
 <div class="row g-3 align-items-center">
@@ -94,6 +95,7 @@
     <!-- Success Alert-->
     <div v-if="message" class="alert alert-success" role="alert">
       {{ message }}
+    </div>
     </div>
   </Container>
 </template>

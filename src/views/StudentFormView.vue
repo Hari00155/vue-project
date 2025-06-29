@@ -1,5 +1,6 @@
 <template>
   <Container>
+    <div class="p-3 mb-2 bg-primary-subtle text-primary-emphasis">
     <h1>Student Form</h1>
 
     <RouterLink to="/students/update">To update a student</RouterLink>
@@ -77,12 +78,14 @@
       <div class="col-12">
         <button class="btn btn-primary" type="submit">Submit form</button>
       </div>
+    
     </form>
 
     <!-- Success Alert-->
     <div v-if="message" class="alert alert-success" role="alert">
       {{ message }}
     </div>
+      </div>
   </Container>
 </template>
 

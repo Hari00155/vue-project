@@ -1,5 +1,6 @@
 <template>
   <Container>
+    <div class="p-3 mb-2 bg-info-subtle text-info-emphasis">
     <h1>Staffs Form</h1>
 
      <RouterLink to="/staffs/update">To update a staff</RouterLink>
@@ -82,6 +83,7 @@
         <button class="btn btn-primary" type="submit">Submit form</button>
       </div>
     </form>
+    </div>
   </Container>
 </template>
 

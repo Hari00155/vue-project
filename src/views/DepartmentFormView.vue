@@ -1,5 +1,6 @@
 <template>
   <Container>
+    <div class="p-3 mb-2 bg-warning-subtle text-warning-emphasis">
     <h1>Department Form</h1>
 
     <RouterLink to="/departments/update">To update a department</RouterLink>
@@ -75,6 +76,7 @@
         <button class="btn btn-primary" type="submit">Submit form</button>
       </div>
     </form>
+  </div>
   </Container>
 </template>
 
