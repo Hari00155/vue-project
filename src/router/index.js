@@ -10,6 +10,7 @@ import UpdateStaffFormView from '@/views/staffs/UpdateStaffFormView.vue'
 import UpdateDepartmentFormView from '@/views/departments/UpdateDepartmentFormView.vue'
 import BlogView from '@/views/BlogView.vue'
 import ContactView from '@/views/ContactView.vue'
+import UserManualView from '@/views/UserManualView.vue'
 
 // route config
 const routes = [
@@ -21,13 +22,10 @@ const routes = [
   { path: '/List-form', name: 'List-form', component: ListView },
   { path: '/students/update', name: 'Update Student Form', component: UpdateStudentFormView },
   { path: '/staffs/update', name: 'Update Staff Form', component: UpdateStaffFormView },
-  {
-    path: '/departments/update',
-    name: 'Update Department Form',
-    component: UpdateDepartmentFormView,
-  },
+  {path: '/departments/update',name: 'Update Department Form', component: UpdateDepartmentFormView, },
   { path: '/Blog', name: 'Blog', component: BlogView },
   { path: '/Contact', name: 'Contact', component: ContactView },
+  {path: '/UserManual', name:'Usermanual', component: UserManualView}
 ]
 
 const router = createRouter({
