@@ -12,11 +12,11 @@
           v-model="staffId">
       </div>
       <div class="col-auto">
-        <button type="button" class="btn btn-outline-success"> Search </button>
+        <button type="button" class="btn btn-outline-success" @click="searchStaffById"> Search </button>
       </div>
     </div>
 
-    <form class="row g-3 needs-validation">
+    <form class="row g-3 needs-validation" @submit.prevent="handleSubmit">
       <div class="col-md-6">
         <label for="inputFirstName" class="form-label">First Name</label>
         <input type="text" class="form-control" id="inputFirstName" required v-model="formData.firstName" />
@@ -73,7 +73,7 @@
       <div class="row mb-3">
         <label for="inputPhoneNO" class="col-sm-2 col-form-label">Phone No</label>
         <div class="col-sm-25">
-          <input type="email" class="form-control" id="inputPhoneNo" required v-model="formData.phno" />
+          <input type="PHNO" class="form-control" id="inputPhoneNo" required v-model="formData.phno" />
           {{ formData.phno }}
         </div>
       </div>
@@ -148,7 +148,7 @@ export default {
     },
     async searchStaffById() {
 
-      let url = `http://localhost:3000/staffs/${this.staffId}`
+      let url = `http://localhost:3001/staffs/${this.staffId}`
       axios.get(url)
         .then(response => {
           console.log(response)

@@ -20,7 +20,7 @@
           <p class="card-text"> Student Portal
             Update your personal, academic, and contact details easily.
             Ensure your student records are always accurate and up to date.</p>
-          <p><RouterLink to="/student-form">To update a student</RouterLink></p>
+          <RouterLink to="/student-form" class="link-success">To update a student</RouterLink>
         </div>
       </div>
 
@@ -32,7 +32,7 @@
           <h5 class="card-title">STAFF</h5>
           <p class="card-text">Modify your profile, professional details, and contact information.
             Keep your staff records current for smooth communication.</p>
-           <p><RouterLink to="/staff-form">To update a staff</RouterLink></p>
+           <RouterLink to="/staff-form" class="link-info">To update a staff</RouterLink>
         </div>
       </div>
 
@@ -44,7 +44,7 @@
           <h5 class="card-title">DEPARTMENT</h5>
           <p class="card-text">Manage and update department information and staff assignments.
             Maintain accurate departmental data with simple tools</p>
-           <p><RouterLink to="/department-form">To update a department</RouterLink></p>
+           <RouterLink to="/department-form" class="link-danger" >To update a department</RouterLink>
         </div>
       </div>
     </div>

@@ -69,7 +69,7 @@
       <div class="row mb-3">
         <label for="inputPhoneNO" class="col-sm-2 col-form-label">Phone No</label>
         <div class="col-sm-25">
-          <input type="email" class="form-control" id="inputPhoneNo" required v-model="formData.phno"/>
+          <input type="phoneno" class="form-control" id="inputPhoneNo" required v-model="formData.phno"/>
           {{ formData.phno }}
         </div>
       </div>
@@ -131,6 +131,7 @@ export default {
         age: null,
         mobileNo: null,
         createdAt: null,
+        
       }
     },
   },

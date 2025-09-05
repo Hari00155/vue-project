@@ -13,6 +13,7 @@ const Department = db.define(
     },
     hod: {
       type: Sequelize.STRING,
+      field:'hod'
     },
     noOfStaff: {
       type: Sequelize.INTEGER,

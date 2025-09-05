@@ -1,11 +1,12 @@
 <template>
-  <Container>
+  <Container >
     <div class="p-3 mb-2 bg-primary-subtle text-primary-emphasis">
     <h1>Student Form</h1>
+    
 
     <RouterLink to="/students/update">To update a student</RouterLink>
 
-    <form class="row g-3 needs-validation" @submit.prevent="handleSubmit">
+    <form class="row g-3 needs-validation" @submit.prevent="handleSubmit"  style="max-width: px;">
       <div class="col-md-6">
         <label for="inputFirstName" class="form-label">First Name</label>
         <input type="text" class="form-control" id="inputFirstName" required v-model="formData.firstName" />
