@@ -1,6 +1,11 @@
 <template>
-  <Container>
-    <div class="p-3 mb-2 bg-info-subtle text-info-emphasis">
+
+    <!-- Full-width sky blue background -->
+   <div class="bg-info-subtle text-info-emphasis py-5">
+    <!-- Inner container to center the form nicely -->
+    <div class="container bg-white p-5 rounded-4 shadow">
+      
+
     <h1>Update Staff Form</h1>
 
     <div class="row g-3 align-items-center">
@@ -93,7 +98,7 @@
     <div v-if="message" class="alert alert-success" role="alert">
       {{ message }}
     </div>
-  </Container>
+   </div>
 </template>
 
 <script>
@@ -164,4 +169,18 @@ export default {
     Container,
   },
 }
+
 </script>
+
+<style scoped>
+.bg-info-subtle {
+  background-color: #d8f7ff !important;
+  /* sky blue */
+  min-height: 100vh;
+}
+
+/* Add a little spacing to make it neat */
+.container {
+  max-width: 900px;
+}
+</style>

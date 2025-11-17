@@ -1,6 +1,8 @@
 <template>
-  <Container >
-    <div class="p-3 mb-2 bg-primary-subtle text-primary-emphasis">
+   <!-- Full-width sky blue background -->
+   <div class="bg-info-subtle text-info-emphasis py-5">
+    <!-- Inner container to center the form nicely -->
+    <div class="container bg-white p-5 rounded-4 shadow">
     <h1>Student Form</h1>
     
 
@@ -79,15 +81,16 @@
       <div class="col-12">
         <button class="btn btn-primary" type="submit">Submit form</button>
       </div>
+      </form>
     
-    </form>
 
     <!-- Success Alert-->
     <div v-if="message" class="alert alert-success" role="alert">
       {{ message }}
     </div>
       </div>
-  </Container>
+    </div>
+ 
 </template>
 
 <script>
@@ -148,3 +151,17 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.bg-info-subtle {
+  background-color: #b6cef7 !important;
+  /* light voilet */
+  min-height: 100vh;
+}
+
+/* Add a little spacing to make it neat */
+.container {
+  max-width: 900px;
+}
+</style>
+

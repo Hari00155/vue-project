@@ -1,6 +1,8 @@
 <template>
-  <Container>
-    <div class="p-3 mb-2 bg-warning-subtle text-warning-emphasis">
+    <!-- Full-width sky blue background -->
+   <div class="bg-info-subtle text-info-emphasis py-5">
+    <!-- Inner container to center the form nicely -->
+    <div class="container bg-white p-5 rounded-4 shadow">
     <h1>Department Form</h1>
 
     <RouterLink to="/departments/update">To update a department</RouterLink>
@@ -77,7 +79,7 @@
       </div>
     </form>
   </div>
-  </Container>
+   </div>
 </template>
 
 <script>
@@ -114,3 +116,15 @@ export default {
   },
 }
 </script>
+<style scoped>
+.bg-info-subtle {
+  background-color: #eeebbf !important;
+  /* light voilet */
+  min-height: 100vh;
+}
+
+/* Add a little spacing to make it neat */
+.container {
+  max-width: 900px;
+}
+</style>
